@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/rasterandstate/fjord/security/advisories/new
+    about: Report it privately. Please do not open a public issue for a security problem.
+  - name: Fjord hosting or account support
+    url: https://fjord.sh/?utm_source=github&utm_medium=referral&utm_campaign=fjord-clients
+    about: This tracker covers the client apps only. For hosting, billing, or account help, email support@fjord.sh.

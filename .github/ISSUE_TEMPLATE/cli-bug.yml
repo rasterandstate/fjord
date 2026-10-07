@@ -1,0 +1,77 @@
+name: fj CLI bug
+description: Report a problem with the fj command-line tool.
+labels: ["cli", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **This issue will be public.** Before you submit, remove access tokens, passwords, private server URLs, private repository names, and personal data from everything you type or paste. Check commands, output, and logs with care: `--debug` output and shell history can contain tokens and hostnames.
+
+        Security problems do not belong here. See the [security policy](https://github.com/rasterandstate/fjord/security/policy).
+  - type: input
+    id: fj-version
+    attributes:
+      label: fj version
+      description: The output of `fj --version`.
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      description: For example macOS 15.1 on Apple silicon, or Ubuntu 24.04 x86_64.
+    validations:
+      required: true
+  - type: dropdown
+    id: install-method
+    attributes:
+      label: How you installed fj
+      options:
+        - Homebrew
+        - Release tarball
+        - Built from source
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: forge-type
+    attributes:
+      label: Forge
+      description: The kind of server fj was talking to. Choose "Not applicable" if the problem has nothing to do with a server, such as installing.
+      options:
+        - Forgejo
+        - Gitea
+        - Other compatible forge
+        - Not applicable
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: forge-version
+    attributes:
+      label: Forge version
+      description: Optional. `fj api /version` prints it. Leave it blank if you do not know.
+    validations:
+      required: false
+  - type: textarea
+    id: command
+    attributes:
+      label: Command you ran
+      description: Replace tokens, hostnames, and private repository names with placeholders.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Output
+      description: Remove tokens, private URLs, and private repository names before pasting.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true

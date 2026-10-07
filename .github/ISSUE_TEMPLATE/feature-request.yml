@@ -1,0 +1,32 @@
+name: Feature request
+description: Suggest something Fjord Mobile or the fj CLI should do.
+labels: ["feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **This issue will be public.** Leave out access tokens, private server URLs, private repository names, and personal data.
+  - type: dropdown
+    id: client
+    attributes:
+      label: Client
+      options:
+        - Fjord Mobile (iOS)
+        - fj CLI
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you trying to do, and what gets in the way today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you would like
+      description: The behavior you have in mind. A rough idea is fine.
+    validations:
+      required: true
