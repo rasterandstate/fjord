@@ -11,7 +11,7 @@ Use either route. Both reach the same people.
 
 Include what you can:
 
-- Which client is affected (Fjord Mobile or the fj CLI) and its version.
+- Which client is affected (Fjord Mobile for iPhone and iPad, Fjord Mobile for Android, or the fj CLI) and its version.
 - What an attacker could do, and the steps to reproduce it.
 - The kind of forge involved and its version, if that matters.
 

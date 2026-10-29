@@ -12,6 +12,7 @@ body:
       label: Client
       options:
         - Fjord Mobile (iOS)
+        - Fjord Mobile (Android)
         - fj CLI
         - Other
     validations:

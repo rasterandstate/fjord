@@ -1,6 +1,8 @@
 <p align="center">
-  <img src="docs/images/fjord-mark.svg#gh-light-mode-only" alt="Fjord" width="138">
-  <img src="docs/images/fjord-mark-dark.svg#gh-dark-mode-only" alt="Fjord" width="112">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/fjord-mark-dark.svg">
+    <img src="docs/images/fjord-mark.svg" alt="Fjord" width="138">
+  </picture>
 </p>
 
 <h1 align="center">Fjord</h1>
@@ -23,23 +25,15 @@
 
 | Client | Availability | Get it |
 | --- | --- | --- |
-| **Fjord Mobile** | On the App Store for iPhone and iPad. Free, with an optional one-time Mobile Pro purchase. | [Download on the App Store](https://apps.apple.com/app/apple-store/id6774756338?pt=128751142&ct=gh-readme-01&mt=8) |
+| **Fjord Mobile** for iPhone and iPad | On the App Store. Free, with an optional one-time Mobile Pro purchase. | <a href="https://apps.apple.com/app/apple-store/id6774756338?pt=128751142&amp;ct=gh-readme-01&amp;mt=8"><img src="docs/images/app-store-badge.svg" alt="Download on the App Store" height="40"></a> |
+| **Fjord Mobile** for Android | On Google Play for phones, tablets, foldables, and Chromebooks. Free, with an optional one-time Mobile Pro purchase. | <a href="https://play.google.com/store/apps/details?id=com.rasterstate.fjord&amp;referrer=utm_source%3Dgithub%26utm_medium%3Dreferral%26utm_campaign%3Dgh-readme-01"><img src="docs/images/google-play-badge.svg" alt="Get it on Google Play" height="40"></a> |
 | **fj CLI** | Available today for macOS and Linux. Free and open source. | [Install with Homebrew](#fj-cli) |
-| **Fjord for Android** | Coming soon. | |
-
-```sh
-brew tap rasterstate/tap https://rasterhub.com/rasterstate/homebrew-tap && brew install fj
-```
 
 You need a forge to connect to: your own Forgejo server, or one someone runs for you. If you want one, [fjord.sh](https://fjord.sh/?utm_source=github&utm_medium=referral&utm_campaign=fjord-clients) offers managed Forgejo hosting.
 
 ## Fjord Mobile
 
-Your self-hosted Git forge on iPhone and iPad. Review pull requests, triage issues, watch your CI, and merge, from anywhere.
-
-<p align="center">
-  <a href="https://apps.apple.com/app/apple-store/id6774756338?pt=128751142&amp;ct=gh-readme-01&amp;mt=8"><img src="docs/images/app-store-badge.svg" alt="Download on the App Store" height="48"></a>
-</p>
+Your self-hosted Git forge on iPhone, iPad, and Android. Review pull requests, triage issues, watch your CI, and merge, from anywhere.
 
 <p align="center">
   <img src="docs/images/fjord-mobile-devices.png" alt="Fjord Mobile reviewing a pull request diff on an iPad with a keyboard, beside the home screen on an iPhone" width="760">
@@ -47,17 +41,17 @@ Your self-hosted Git forge on iPhone and iPad. Review pull requests, triage issu
 
 - **Review pull requests.** Conversation, diffs, changed files, and CI status. Approve, request changes, and merge.
 - **Work your issues.** Open pull requests, create and edit issues, comment, label, and assign.
-- **Run CI, not just watch it.** Browse Actions runs, read a failed job's log, cancel a run or start one, and download artifacts.
+- **Run CI, not just watch it.** Browse Actions runs, read a failed job's log, and start a run.
 - **Read and fix code.** Browse repositories, commits, branches, and releases. Edit a file and commit it to a branch for a quick fix.
 - **Stay current.** A notification inbox, optional push, and Home Screen widgets.
 
-Sign in with a personal access token from your own server. No Fjord account is required, and the token is stored only in the device Keychain. Signing in with a Fjord account adds push notifications and lets you manage multiple accounts and switch between your servers without signing out.
+Sign in to your own Forgejo or Gitea server with a personal access token. No Fjord account is required. Add several servers and accounts and switch between them without signing out. Tokens stay on the device: in the Keychain on iPhone and iPad, encrypted with the Android Keystore on Android. Signing in with a Fjord account adds push notifications.
 
-**Free:** connect any Forgejo server, add several servers and accounts, browse, and review, comment on, and merge pull requests. Actions and their logs, push notifications, the contribution widget, reading pull requests offline, and a few offline reviews are free as well.
+**Free:** browse, review, comment on, and merge pull requests. Actions and their logs, push notifications, the contribution widget, reading pull requests offline, and a few offline reviews are free as well.
 
-**Mobile Pro** is a one-time purchase. It adds Needs You (the pull requests waiting on you) on Home and in a widget, multi-line and block comments, offline review beyond the free allowance, Live Activities for runs, advanced notification actions, and the iPad review workstation.
+**Mobile Pro** is an optional one-time purchase, bought separately on the App Store and on Google Play. It adds the Review Queue (the pull requests waiting on your review, one at a time), Needs You on Home and in a widget, multi-line comments, commenting in the review workstation on iPad and Android tablets, more offline reviews, notification actions, and an on-device review assistant where Apple Intelligence or Gemini Nano is available. On iPhone and iPad it also adds Live Activities for runs and Siri; on Android you follow and cancel a run from its notification.
 
-Requires iOS 17 or later. More at [mobile.fjord.sh](https://mobile.fjord.sh/mobile?utm_source=github&utm_medium=referral&utm_campaign=fjord-clients).
+Requires iOS 17.4 or later, or Android 8.0 or later. The two apps are released separately, with their own version numbers. More at [mobile.fjord.sh](https://mobile.fjord.sh/mobile?utm_source=github&utm_medium=referral&utm_campaign=fjord-clients).
 
 ## fj CLI
 
@@ -93,7 +87,8 @@ fj is open source under the MIT license. Its source and releases are at [rasterh
 
 | Client | Forges |
 | --- | --- |
-| Fjord Mobile | Forgejo 7 and newer, and other compatible installations, including Gitea. Actions runs need Forgejo 15; job logs, cancelling a run, and artifacts need Forgejo 16. |
+| Fjord Mobile for iPhone and iPad | Forgejo 7 and newer, and Gitea servers. Actions runs need Forgejo 15; job logs, cancelling a run, and artifacts need Forgejo 16. Comments on a range of lines need Forgejo 16 and are not available on Gitea. |
+| Fjord Mobile for Android | Forgejo and Gitea servers. Comments on a range of lines need Forgejo 16. |
 | fj CLI | Built against the Forgejo 7 API and tested on Forgejo 7.0. Newer versions are expected to work, and Gitea 1.21 mostly works. See the [compatibility notes](https://rasterhub.com/rasterstate/fj/src/branch/main/docs/compatibility.md). |
 
 ## About this repository
